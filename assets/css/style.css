@@ -220,12 +220,12 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-	background: #31CBFC;
+	background: #5865F2;
 	border-radius: 30px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-	background: #31CBFC;
+	background: #5865F2;
 }
 
 .footer {
