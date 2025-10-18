@@ -6,7 +6,15 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="icon" href="assets/images/icon.png" type="image/x-icon">
-    <title>Logify</title>
+
+    <title>Logify — Мощный лог-бот для Discord | Отслеживай события на сервере</title>
+
+    <meta name="description" content="Logify — многофункциональный лог-бот для Discord. Логируй сообщения, каналы, роли, участников и события сервера. Удобная настройка, статистика активности и безопасность. Добавь Logify и управляй сервером легко!" />
+    <meta name="keywords" content="Logify, Discord лог бот, логирование Discord, бот логирования, Discord log bot, Discord logs, Discord сервер, администрирование Discord, Discord bot, лог событий, Discord админ, отслеживание действий Discord" />
+    <meta name="author" content="Logify Bot">
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://logifybot.xyz">
 </head>
 <body>
 
@@ -18,9 +26,17 @@
     <header class="header">
         <div class="container">
             <div class="header__inner">
-                <img src="assets/images/logo.png">
+                <div class="header__left">
+                    <img src="assets/images/logo.png" class="header__logo" alt="Logify">
+                </div>
 
-                <nav class="nav">
+                <div class="burger" id="burger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <nav class="nav" id="nav">
                     <a class="nav__link" href="https://docs.logifybot.xyz/">Документация</a>
                     <a class="nav__link" href="https://discord.gg/AUxrmymWAE">Сервер поддержки</a>
                     <a class="nav__link2" href="https://boosty.to/hastiness">Поддержите нас</a>
@@ -98,11 +114,31 @@
             });
         }, appearOptions);
         faders.forEach(fader => appearOnScroll.observe(fader));
+
+        const burger = document.getElementById('burger');
+        const nav = document.getElementById('nav');
+        const navLinks = document.querySelectorAll('#nav a');
+
+        if (burger && nav) {
+            burger.addEventListener('click', () => {
+                burger.classList.toggle('active');
+                nav.classList.toggle('active');
+                document.body.classList.toggle('menu-open');
+            });
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    burger.classList.remove('active');
+                    nav.classList.remove('active');
+                    document.body.classList.remove('menu-open');
+                });
+            });
+        }
     });
 
     window.addEventListener("load", function() {
         const preloader = document.querySelector(".preloader");
-        preloader.classList.add("hidden");
+        if (preloader) preloader.classList.add("hidden");
     });
 </script>
 
