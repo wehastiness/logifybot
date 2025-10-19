@@ -189,6 +189,7 @@ body {
     justify-content: center;
     width: 100%;
     height: 60vh;
+    padding-top: 15vh 0;
 }
 
 .features__inner {
@@ -235,21 +236,21 @@ body {
 }
 
 ::-webkit-scrollbar {
-	width: 10px;
-	color: #ffffff;
+    width: 10px;
+    color: #ffffff;
 }
 
 ::-webkit-scrollbar-track {
-	background: #0B090F;
+    background: #0B090F;
 }
 
 ::-webkit-scrollbar-thumb {
-	background: #5865F2;
-	border-radius: 30px;
+    background: #5865F2;
+    border-radius: 30px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-	background: #5865F2;
+    background: #5865F2;
 }
 
 .footer {
@@ -492,4 +493,75 @@ body {
 .preloader.hidden {
     opacity: 0;
     visibility: hidden;
+}
+
+.feature-item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 80px;
+    gap: 50px;
+}
+
+.feature-item.reverse {
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+}
+
+.feature-text {
+    flex: 1 1 400px;
+    min-width: 300px;
+}
+
+.feature-image {
+    flex: 1 1 300px;
+    text-align: center;
+}
+
+.feature-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 16px;
+}
+
+.feature-text h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #5865F2;
+    margin-bottom: 20px;
+}
+
+.feature-text p {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.feature-subtext {
+    font-size: 1rem;
+    color: #ffffff;
+    opacity: 0.9;
+}
+
+.feature-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 16px;
+    transition: transform 0.5s ease, box-shadow 0.5s ease, filter 0.5s ease;
+    box-shadow: 0 0 20px rgba(88, 101, 242, 0.2);
+    filter: drop-shadow(0 0 10px rgba(88, 101, 242, 0.5));
+}
+
+.feature-item:not(.reverse) .feature-image img:hover {
+    transform: scale(1.05) rotate(3deg);
+    box-shadow: 0 0 40px rgba(88, 101, 242, 0.6), 0 0 60px rgba(88, 101, 242, 0.3);
+    filter: drop-shadow(0 0 15px rgba(88, 101, 242, 0.7));
+}
+
+.feature-item.reverse .feature-image img:hover {
+    transform: scale(1.05) rotate(-3deg);
+    box-shadow: 0 0 40px rgba(88, 101, 242, 0.6), 0 0 60px rgba(88, 101, 242, 0.3);
+    filter: drop-shadow(0 0 15px rgba(88, 101, 242, 0.7));
 }
