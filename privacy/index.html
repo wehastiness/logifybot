@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Политика конфиденциальности - Logify</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/icon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/icon-16x16.png">
+    <style>
+        body {
+            background-image: url("../assets/images/background.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            color: #ffffff;
+            line-height: 1.7;
+        }
+        *, *:before, *:after { box-sizing: border-box; }
+        .page { display: flex; flex-direction: column; min-height: 100vh; }
+
+        .header {
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+        .header__left { position: relative; display: inline-block; }
+        .header__logo { position: relative; z-index: 2; }
+        .header__left::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            background-color: rgba(88, 101, 242, 0.25);
+            filter: blur(50px);
+            border-radius: 50%;
+            z-index: 1;
+        }
+        .header__inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .nav {
+            font-size: 28px;
+            text-transform: case;
+        }
+        .nav__link {
+            display: inline_block;
+            vertical-align: top;
+            margin: 0 60px;
+            position: relative;
+            color: #ffffff;
+            text-decoration: none;
+            transition: color .2s linear;
+        }
+        .nav__link2 {
+            display: inline_block;
+            vertical-align: top;
+            margin: 0 60px;
+            position: relative;
+            color: #5865F2;
+            text-decoration: none;
+            transition: color .2s linear;
+        }
+        .nav__link:hover { color: #9C9999; text-decoration: none; }
+        .nav__link2:hover { color: #4853C3; text-decoration: none; }
+
+        .burger {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 20px;
+            cursor: pointer;
+        }
+        .burger span {
+            display: block;
+            height: 3px;
+            background-color: #ffffff;
+            border-radius: 3px;
+            transition: 0.3s ease;
+        }
+        .burger.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+        .burger.active span:nth-child(2) { opacity: 0; }
+        .burger.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+        @media (max-width: 767px) {
+            .burger { display: flex; flex-direction: column; justify-content: space-between; width: 30px; height: 20px; cursor: pointer; z-index: 1001; }
+            .nav { position: fixed; top: 0; right: -100%; width: 70%; height: 100%; background-color: #141528; flex-direction: column; align-items: center; justify-content: center; text-align: center; transition: right 0.3s ease; z-index: 1000; }
+            .nav.active { right: 0; }
+            .nav__link, .nav__link2 { display: block; width: 100%; margin: 15px 0; font-size: 20px; text-align: center; color: #ffffff; }
+            .nav__link2 { color: #5865F2; }
+            .header__inner { justify-content: space-between; align-items: center; }
+            .header__logo { height: 60px; }
+        }
+
+        .container { max-width: 900px; margin: 0 auto; padding: 150px 20px 60px 20px; }
+        h1 { font-size: 3rem; color: #5865F2; text-align: center; margin-bottom: 10px; }
+        .last-updated { font-size: 0.9rem; color: #888; text-align: center; margin-bottom: 50px; }
+        h2 { font-size: 1.8rem; color: #ffffff; margin-top: 40px; margin-bottom: 15px; border-left: 4px solid #5865F2; padding-left: 10px; }
+        p, li { font-size: 1rem; margin-bottom: 15px; }
+        ul { margin-left: 30px; margin-bottom: 20px; }
+        a { color: #5865F2; text-decoration: none; }
+        a:hover { text-decoration: none; }
+
+        .fade-in-section { opacity: 0; transform: translateY(30px); visibility: hidden; transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+        .fade-in-section.is-visible { opacity: 1; transform: translateY(0); visibility: visible; }
+    </style>
+</head>
+<body>
+<div class="page">
+    <header class="header">
+        <div class="header__inner">
+            <div class="header__left">
+                <img src="../assets/images/logo.png" class="header__logo" alt="Logify">
+            </div>
+
+            <div class="burger" id="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <nav class="nav" id="nav">
+                <a class="nav__link" href="/">Вернуться на главную</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1 class="fade-in-section">Политика конфиденциальности</h1>
+        <p class="last-updated fade-in-section">Последнее обновление: 16/10/2025</p>
+
+        <div class="fade-in-section">
+            <h2>1. Введение</h2>
+            <p>Настоящая Политика конфиденциальности ("Политика") регулирует сбор, использование, хранение и раскрытие информации, полученной от пользователей ("Пользователей") наших сервисов. Используя наши сервисы, вы подтверждаете, что ознакомились с данной Политикой, понимаете её содержание и соглашаетесь с ней. Если вы заметили неточности, пожалуйста, свяжитесь с нами по адресу <a href="mailto:yoka.use@proton.me">yoka.use@proton.me</a>.</p>
+
+            <h2>2. Сбор информации</h2>
+            <p>Мы собираем и обрабатываем только следующую информацию:</p>
+            <ul>
+                <li>Информация о гильдии: ID гильдии и настройки сервера.</li>
+            </ul>
+            <p>Мы не собираем конфиденциальную личную информацию, такую как ваше настоящее имя, адрес электронной почты или данные платежных карт через бота.</p>
+
+            <h2>3. Цель сбора и обработки данных</h2>
+            <p>Собранные данные используются исключительно для законных операционных целей, включая:</p>
+            <ul>
+                <li>Поддержку выполнения команд и функциональности системы</li>
+                <li>Хранение настроек сервера для корректной работы бота</li>
+            </ul>
+            <p>Все данные хранятся только на необходимый период для обеспечения функционирования сервиса.</p>
+
+            <h2>4. Раскрытие информации третьим лицам</h2>
+            <ul>
+                <li>Мы не продаем, не обмениваем и не сдаем информацию Пользователей третьим лицам.</li>
+                <li>Мы можем раскрывать информацию только в случае требования закона или для соблюдения юридических обязательств.</li>
+            </ul>
+
+            <h2>5. Права Пользователей</h2>
+            <p><strong>Право на удаление:</strong> Пользователи могут запросить удаление своих данных, написав на <a href="mailto:yoka.use@proton.me">yoka.use@proton.me</a>. Запрос должен:</p>
+            <ul>
+                <li>Указывать, какие данные должны быть удалены</li>
+                <li>Содержать подтверждение владения аккаунтом</li>
+                <li>Учесть срок обработки до 14 дней</li>
+            </ul>
+            <p><strong>Право на доступ:</strong> Пользователи могут запросить доступ ко всем данным, которые мы храним о них, написав на <a href="mailto:yoka.use@proton.me">yoka.use@proton.me</a>. Ответ может занять до 7 дней.</p>
+
+            <h2>6. Изменения в Политике</h2>
+            <p>Мы оставляем за собой право изменять или обновлять данную Политику в любое время без предварительного уведомления. Продолжение использования сервисов после изменений означает принятие обновленной Политики.</p>
+
+            <h2>7. Контактная информация</h2>
+            <p>По вопросам или проблемам, связанным с этой Политикой, свяжитесь с нами: <a href="mailto:yoka.use@proton.me">yoka.use@proton.me</a></p>
+        </div>
+    </div>
+</div>
+
+<script>
+    const burger = document.getElementById('burger');
+    const nav = document.getElementById('nav');
+    burger.addEventListener('click', () => {
+        burger.classList.toggle('active');
+        nav.classList.toggle('active');
+    });
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const faders = document.querySelectorAll('.fade-in-section');
+        const appearOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
+        const appearOnScroll = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('is-visible'); });
+        }, appearOptions);
+        faders.forEach(fader => appearOnScroll.observe(fader));
+    });
+</script>
+</body>
+</html>

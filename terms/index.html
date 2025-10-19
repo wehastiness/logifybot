@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пользовательское соглашение - Logify</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/icon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/icon-16x16.png">
+    <style>
+        body {
+            background-image: url("../assets/images/background.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            color: #ffffff;
+            line-height: 1.7;
+        }
+        *, *:before, *:after { box-sizing: border-box; }
+        .page { display: flex; flex-direction: column; min-height: 100vh; }
+
+        .header {
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+        .header__left { position: relative; display: inline-block; }
+        .header__logo { position: relative; z-index: 2; }
+        .header__left::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            background-color: rgba(88, 101, 242, 0.25);
+            filter: blur(50px);
+            border-radius: 50%;
+            z-index: 1;
+        }
+        .header__inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .nav {
+            font-size: 28px;
+            text-transform: case;
+        }
+        .nav__link {
+            display: inline_block;
+            vertical-align: top;
+            margin: 0 60px;
+            position: relative;
+            color: #ffffff;
+            text-decoration: none;
+            transition: color .2s linear;
+        }
+        .nav__link2 {
+            display: inline_block;
+            vertical-align: top;
+            margin: 0 60px;
+            position: relative;
+            color: #5865F2;
+            text-decoration: none;
+            transition: color .2s linear;
+        }
+        .nav__link:hover { color: #9C9999; text-decoration: none; }
+        .nav__link2:hover { color: #4853C3; text-decoration: none; }
+
+        .burger {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 20px;
+            cursor: pointer;
+        }
+        .burger span {
+            display: block;
+            height: 3px;
+            background-color: #ffffff;
+            border-radius: 3px;
+            transition: 0.3s ease;
+        }
+        .burger.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+        .burger.active span:nth-child(2) { opacity: 0; }
+        .burger.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+        @media (max-width: 767px) {
+            .burger { display: flex; flex-direction: column; justify-content: space-between; width: 30px; height: 20px; cursor: pointer; z-index: 1001; }
+            .nav { position: fixed; top: 0; right: -100%; width: 70%; height: 100%; background-color: #141528; flex-direction: column; align-items: center; justify-content: center; text-align: center; transition: right 0.3s ease; z-index: 1000; }
+            .nav.active { right: 0; }
+            .nav__link, .nav__link2 { display: block; width: 100%; margin: 15px 0; font-size: 20px; text-align: center; color: #ffffff; }
+            .nav__link2 { color: #5865F2; }
+            .header__inner { justify-content: space-between; align-items: center; }
+            .header__logo { height: 60px; }
+        }
+
+        .container { max-width: 900px; margin: 0 auto; padding: 150px 20px 60px 20px; }
+        h1 { font-size: 3rem; color: #5865F2; text-align: center; margin-bottom: 10px; }
+        .last-updated { font-size: 0.9rem; color: #888; text-align: center; margin-bottom: 50px; }
+        h2 { font-size: 1.8rem; color: #ffffff; margin-top: 40px; margin-bottom: 15px; border-left: 4px solid #5865F2; padding-left: 10px; }
+        p, li { font-size: 1rem; margin-bottom: 15px; }
+        ul { margin-left: 30px; margin-bottom: 20px; }
+        a { color: #5865F2; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        .fade-in-section { opacity: 0; transform: translateY(30px); visibility: hidden; transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+        .fade-in-section.is-visible { opacity: 1; transform: translateY(0); visibility: visible; }
+    </style>
+</head>
+<body>
+<div class="page">
+    <header class="header">
+        <div class="header__inner">
+            <div class="header__left">
+                <img src="../assets/images/logo.png" class="header__logo" alt="Logify">
+            </div>
+
+            <div class="burger" id="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <nav class="nav" id="nav">
+                <a class="nav__link" href="/">Вернуться на главную</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1 class="fade-in-section">Пользовательское соглашение</h1>
+        <p class="last-updated fade-in-section">Последнее обновление: 16/10/2025</p>
+
+        <div class="fade-in-section">
+            <h2>1. Принятие условий</h2>
+            <p>Используя сервисы Logify ("Сервисы"), включая добавление Logify ("Бота") на ваш сервер Discord, вы ("Пользователь") подтверждаете, что ознакомились с этим Пользовательским соглашением ("Соглашение"), понимаете его и соглашаетесь соблюдать его условия. Если вы не согласны с условиями, необходимо немедленно прекратить использование Сервисов.</p>
+
+            <h2>2. Определения</h2>
+            <ul>
+                <li>"Logify", "мы", "наш" — Logify и его аффилированные лица, сотрудники и агенты.</li>
+                <li>"Сервисы" — все функции, приложения, боты и другие услуги, предоставляемые Logify.</li>
+                <li>"Пользователь", "вы", "ваш" — любое физическое или юридическое лицо, использующее наши Сервисы.</li>
+            </ul>
+
+            <h2>3. Соблюдение законов и правил Discord</h2>
+            <p>Пользователи обязаны соблюдать все применимые законы и правила Discord. Нарушения правил Discord рассматриваются как нарушение этого Соглашения. О любых нарушениях необходимо сообщать Logify на <a href="mailto:yoka.use@proton.me">yoka.use@proton.me</a>.</p>
+
+            <h2>4. Запрещенные действия</h2>
+            <ul>
+                <li>Нарушение правил Discord;</li>
+                <li>Использование ошибок или уязвимостей бота;</li>
+                <li>Копирование, продажа или воспроизведение функционала бота;</li>
+                <li>Атаки на Logify или его команду.</li>
+            </ul>
+            <p><strong>Права на принуждение:</strong> Logify может ограничить или прекратить доступ к Сервисам, удалять или блокировать контент, а также предпринимать юридические действия против пользователей.</p>
+
+            <h2>5. Возвраты и ограничения аккаунта</h2>
+            <p>В случае возврата средств Logify может заблокировать аккаунт пользователя в Discord и ограничить доступ к Сервисам.</p>
+
+            <h2>6. Лицензия и подписка</h2>
+            <p>Покупка подписки или одноразового платежа предоставляет непередаваемую, отзывную лицензию на использование Сервисов. Пользователь имеет право на одну бесплатную передачу бота на другой сервер Discord.</p>
+
+            <h2>7. Передачи</h2>
+            <ul>
+                <li>Каждая подписка включает одну бесплатную передачу бота.</li>
+                <li>Дополнительные передачи требуют новой подписки.</li>
+                <li>Передачи окончательны; Logify не несет ответственности за удаление серверов пользователем или третьими лицами.</li>
+            </ul>
+
+            <h2>8. Отношения с третьими сторонами</h2>
+            <p>Logify не несет ответственности за действия или контент третьих лиц.</p>
+
+            <h2>9. Доступность Сервисов и прекращение</h2>
+            <ul>
+                <li>Непрерывный доступ к Сервисам не гарантируется.</li>
+                <li>Logify может прекратить доступ при нарушении Пользователем Соглашения.</li>
+                <li>Условия, которые по своей сути продолжают действовать после прекращения, остаются в силе.</li>
+            </ul>
+
+            <h2>10. Возмещение ущерба</h2>
+            <p>Пользователи соглашаются защищать и обезопасить Logify от любых претензий, убытков или расходов, возникающих в результате нарушения этого Соглашения или неправильного использования Сервисов.</p>
+
+            <h2>11. Ограничение ответственности</h2>
+            <p>Logify не несет ответственности за прямые или косвенные убытки, возникающие при использовании Сервисов.</p>
+
+            <h2>12. Изменения</h2>
+            <p>Logify может обновлять это Соглашение в любое время без уведомления. Продолжение использования Сервисов означает согласие с изменениями.</p>
+
+            <h2>13. Прочее</h2>
+            <p>Если какое-либо положение недействительно, остальные положения остаются в силе. По вопросам обращайтесь: <a href="mailto:yoka.use@proton.me">yoka.use@proton.me</a></p>
+        </div>
+    </div>
+</div>
+
+<script>
+    const burger = document.getElementById('burger');
+    const nav = document.getElementById('nav');
+    burger.addEventListener('click', () => {
+        burger.classList.toggle('active');
+        nav.classList.toggle('active');
+    });
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const faders = document.querySelectorAll('.fade-in-section');
+        const appearOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
+        const appearOnScroll = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('is-visible'); });
+        }, appearOptions);
+        faders.forEach(fader => appearOnScroll.observe(fader));
+    });
+</script>
+</body>
+</html>
