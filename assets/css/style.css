@@ -448,8 +448,8 @@ body {
     .nav__link2:hover { color: #4752c4; }
     .header__inner { justify-content: space-between; align-items: center; }
     .header__logo { height: 60px; }
-    .bot-stats__inner { flex-wrap: wrap; justify-content: space-around; }
-    .bot-stats__card { min-width: 100px; margin: 0; }
+    .bot-stats__inner { display: flex; flex-direction: column; gap: 20px; align-items: center; }
+    .bot-stats__card { width: 100%; max-width: 300px; margin: 0 auto; text-align: center; }
     .footer__inner { flex-direction: column; gap: 30px; text-align: center; }
     .footer__column { margin-bottom: 20px; }
 }
@@ -459,8 +459,8 @@ body {
     .intro__suptitle { font-size: 18px; text-align: center; }
     .btn, .btn2 { width: 90%; padding: 16px 0; font-size: 18px; text-align: center; margin: 16px auto; }
     .nav__link, .nav__link2 { display: block; width: 100%; margin: 10px 0; font-size: 16px; text-align: center; }
-    .bot-stats__inner { flex-wrap: wrap; justify-content: space-around; }
-    .bot-stats__card { min-width: 90px; margin: 0; }
+    .bot-stats__inner { display: flex; flex-direction: column; gap: 20px; align-items: center; }
+    .bot-stats__card { width: 100%; max-width: 300px; margin: 0 auto; text-align: center; }
     .bot-stats__number { font-size: 28px; }
     .bot-stats__label { font-size: 14px; }
 }
