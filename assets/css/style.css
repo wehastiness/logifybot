@@ -84,7 +84,6 @@ body {
     transform: translate(-50%, -50%);
     width: 100%;
     height: 100%;
-    background-color: rgba(88, 101, 242, 0.25);
     filter: blur(50px);
     border-radius: 50%;
     z-index: 1;
@@ -241,7 +240,7 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-    background: #0B090F;
+    background: #101018;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -255,7 +254,7 @@ body {
 
 .footer {
     width: 100%;
-    background-color: #141528;
+    background-color: #101018;
     padding: 40px;
     text-align: center;
 }
@@ -440,7 +439,7 @@ body {
     .burger.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
     .burger.active span:nth-child(2) { opacity: 0; }
     .burger.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
-    .nav { position: fixed; top: 0; right: -100%; width: 70%; height: 100%; background-color: #141528; flex-direction: column; align-items: center; justify-content: center; text-align: center; transition: right 0.3s ease; z-index: 1000; }
+    .nav { position: fixed; top: 0; right: -100%; width: 70%; height: 100%; background-color: #101018; flex-direction: column; align-items: center; justify-content: center; text-align: center; transition: right 0.3s ease; z-index: 1000; }
     .nav.active { right: 0; }
     .nav__link, .nav__link2 { display: block; width: 100%; margin: 15px 0; font-size: 20px; text-align: center; text-decoration: none; color: #ffffff; transition: color 0.3s ease; }
     .nav__link2 { color: #5865F2; }
@@ -471,7 +470,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #141528;
+    background-color: #101018;
     display: flex;
     align-items: center;
     justify-content: center;
