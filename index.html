@@ -103,15 +103,15 @@
             <h2 class="intro__title">Статистика бота</h2>
             <div class="bot-stats__inner">
                 <div class="bot-stats__card">
-                    <h3 class="bot-stats__number" id="servers">0+</h3>
+                    <h3 class="bot-stats__number" id="servers">0</h3>
                     <p class="bot-stats__label">Серверов</p>
                 </div>
                 <div class="bot-stats__card">
-                    <h3 class="bot-stats__number" id="users">0+</h3>
+                    <h3 class="bot-stats__number" id="users">0</h3>
                     <p class="bot-stats__label">Пользователей</p>
                 </div>
                 <div class="bot-stats__card">
-                    <h3 class="bot-stats__number" id="logs">0+</h3>
+                    <h3 class="bot-stats__number" id="logs">0</h3>
                     <p class="bot-stats__label">Отправлено логов</p>
                 </div>
             </div>
@@ -195,23 +195,37 @@
         if (preloader) preloader.classList.add("hidden");
     });
 
-    const stats = {
-        servers: 30,
-        users: 42000,
-        logs: 1000
-    };
+    const NGROK_API_URL = "https://unfluttering-cherubical-elke.ngrok-free.dev/stats";
 
     function resetNumbers() {
-        document.getElementById('servers').textContent = '0+';
-        document.getElementById('users').textContent = '0+';
-        document.getElementById('logs').textContent = '0+';
+        document.getElementById('servers').textContent = '0';
+        document.getElementById('users').textContent = '0';
+        document.getElementById('logs').textContent = '0';
     }
 
-    function animateNumbers() {
+    async function fetchBotStats() {
+        try {
+            const response = await fetch(NGROK_API_URL);
+            const text = await response.text();
+            const data = JSON.parse(text);
+            return {
+                servers: data.servers_count || 0,
+                users: data.users_count || 0,
+                logs: data.sent_logs_count || 0
+            };
+        } catch (err) {
+            console.error("Не удалось получить статистику бота:", err);
+            return { servers: 0, users: 0, logs: 0 };
+        }
+    }
+
+    async function animateNumbers() {
+        const stats = await fetchBotStats();
+
         Object.keys(stats).forEach(id => {
             const el = document.getElementById(id);
-            let start = Math.floor(Math.random() * stats[id]);
             const end = stats[id];
+            let start = 0;
             const duration = 1200;
             const startTime = performance.now();
 
@@ -220,10 +234,10 @@
                 if (elapsed < duration) {
                     const progress = elapsed / duration;
                     const value = Math.floor(start + (end - start) * progress);
-                    el.textContent = value + "+";
+                    el.textContent = value;
                     requestAnimationFrame(update);
                 } else {
-                    el.textContent = end + "+";
+                    el.textContent = end;
                 }
             }
 
@@ -233,6 +247,4 @@
 </script>
 
 </body>
-
 </html>
-
