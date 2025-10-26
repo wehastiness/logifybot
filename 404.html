@@ -3,172 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 - Страница не найдена | Logify</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/icon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/icon-16x16.png">
-    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
-
-    <style>
-        body {
-            background-image: url("assets/images/background.png");
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            margin: 0;
-            font-family: 'Montserrat', sans-serif;
-            color: #ffffff;
-            line-height: 1.7;
-        }
-        *, *:before, *:after { box-sizing: border-box; }
-        .page { display: flex; flex-direction: column; min-height: 100vh; }
-
-        .header {
-            width: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-        }
-        .header__left { position: relative; display: inline-block; }
-        .header__logo { position: relative; z-index: 2; }
-        .header__left::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 100%;
-            height: 100%;
-            filter: blur(50px);
-            border-radius: 50%;
-            z-index: 1;
-        }
-        .header__inner {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1600px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .nav {
-            font-size: 28px;
-        }
-        .nav__link {
-            display: inline_block;
-            vertical-align: top;
-            margin: 0 60px;
-            position: relative;
-            color: #ffffff;
-            text-decoration: none;
-            transition: color .2s linear;
-        }
-        .nav__link:hover { color: #DEDBDB; text-decoration: none; }
-
-        .burger {
-            display: none;
-            flex-direction: column;
-            justify-content: space-between;
-            width: 30px;
-            height: 20px;
-            cursor: pointer;
-        }
-        .burger span {
-            display: block;
-            height: 3px;
-            background-color: #ffffff;
-            border-radius: 3px;
-            transition: 0.3s ease;
-        }
-        .burger.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-        .burger.active span:nth-child(2) { opacity: 0; }
-        .burger.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
-
-        @media (max-width: 767px) {
-            .burger { display: flex; flex-direction: column; justify-content: space-between; width: 30px; height: 20px; cursor: pointer; z-index: 1001; }
-            .nav { position: fixed; top: 0; right: -100%; width: 70%; height: 100%; background-color: #141528; flex-direction: column; align-items: center; justify-content: center; text-align: center; transition: right 0.3s ease; z-index: 1000; }
-            .nav.active { right: 0; }
-            .nav__link { display: block; width: 100%; margin: 15px 0; font-size: 20px; text-align: center; color: #ffffff; }
-            .header__inner { justify-content: space-between; align-items: center; }
-            .header__logo { height: 60px; }
-        }
-
-        .container { max-width: 900px; margin: 0 auto; padding: 150px 20px 60px 20px; text-align: center; }
-        h1 { font-size: 5rem; color: #FFFFFF; margin-bottom: 20px; animation: blink 1.5s infinite; }
-        @keyframes blink {
-            0%, 50%, 100% { opacity: 1; }
-            25%, 75% { opacity: 0; }
-        }
-        h2 { font-size: 2rem; color: #ffffff; margin-bottom: 30px; }
-        p { font-size: 1.2rem; margin-bottom: 30px; }
-        a.button {
-            display: inline-block;
-            padding: 12px 30px;
-            background-color: #FFFFFF;
-            color: #ffffff;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: background-color 0.3s;
-            margin-top: 20px;
-        }
-        a.button:hover { background-color: #4853C3; }
-
-        img.illustration {
-            max-width: 300px;
-            margin-top: 30px;
-        }
-
-        .fade-in-section { opacity: 0; transform: translateY(30px); visibility: hidden; transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
-        .fade-in-section.is-visible { opacity: 1; transform: translateY(0); visibility: visible; }
-    </style>
+    <title>404 - Страница не найдена</title>
+    <link rel="icon" type="image/x-icon" href="assets/images/logo.gif">
+    <link rel="stylesheet" href="assets/styles/style.css">
 </head>
 <body>
-<div class="page">
-    <header class="header">
-        <div class="header__inner">
-            <div class="header__left">
-                <img src="assets/images/logo.png" class="header__logo" alt="Logify">
-            </div>
 
-            <div class="burger" id="burger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-
-            <nav class="nav" id="nav">
-                <a class="nav__link" href="/">Вернуться на главную</a>
-            </nav>
-        </div>
-    </header>
-
-    <div class="container">
-        <h1 class="fade-in-section">404</h1>
-        <h2 class="fade-in-section">Страница не найдена</h2>
-        <p class="fade-in-section">Упс! Страница, которую вы ищете, не существует или была перемещена.</p>
-    </div>
+<div class="logo-container">
+    <img src="assets/images/logo.gif" alt="Лого с глазом">
 </div>
 
-<script>
-    const burger = document.getElementById('burger');
-    const nav = document.getElementById('nav');
-    burger.addEventListener('click', () => {
-        burger.classList.toggle('active');
-        nav.classList.toggle('active');
-    });
+<div class="buttons">
+    <a href="/" class="btn">На главную</a>
+    <a href="https://discord.gg/AUxrmymWAE" class="btn btn-support">Сервер поддержки</a>
+</div>
 
-    document.addEventListener("DOMContentLoaded", function() {
-        const faders = document.querySelectorAll('.fade-in-section');
-        const appearOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
-        const appearOnScroll = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('is-visible'); });
-        }, appearOptions);
-        faders.forEach(fader => appearOnScroll.observe(fader));
-    });
-</script>
 </body>
 </html>

@@ -3,13 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/icon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/icon-16x16.png">
-    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
-
     <title>Logify — Мощный лог-бот для Discord | Отслеживай события на сервере</title>
+    <link rel="icon" type="image/x-icon" href="assets/images/logo.gif">
+    <link rel="stylesheet" href="assets/styles/style.css">
 
     <meta name="description" content="Logify — многофункциональный лог-бот для Discord. Логируй сообщения, каналы, роли, участников и события сервера. Удобная настройка, статистика активности и безопасность. Добавь Logify и управляй сервером легко!" />
     <meta name="keywords" content="Logify, Discord лог бот, логирование Discord, бот логирования, Discord log bot, Discord logs, Discord сервер, администрирование Discord, Discord bot, лог событий, Discord админ, отслеживание действий Discord" />
@@ -20,220 +16,14 @@
 </head>
 <body>
 
-<div class="preloader">
-    <img src="assets/images/icon.png" alt="Loading...">
+<div class="logo-container">
+    <img src="assets/images/logo.gif" alt="Лого с глазом">
 </div>
 
-<div class="page">
-    <header class="header">
-        <div class="container">
-            <div class="header__inner">
-                <div class="header__left">
-                    <img src="assets/images/logo.png" class="header__logo" alt="Logify">
-                </div>
-
-                <div class="burger" id="burger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-
-                <nav class="nav" id="nav">
-                    <a class="nav__link" href="https://docs.logifybot.xyz/">Документация</a>
-                    <a class="nav__link" href="https://discord.gg/AUxrmymWAE">Сервер поддержки</a>
-                    <a class="nav__link2" href="https://boosty.to/azurebot">Поддержите нас</a>
-                </nav>
-            </div>
-        </div>
-    </header>
-
-    <div class="intro">
-        <div class="container">
-            <div class="intro__inner">
-                <h1 class="intro__title">Logify</h1>
-                <h1 class="intro__suptitle">Мощный лог-бот для Discord с настройкой и отслеживанием событий.</h1>
-
-                <a class="btn" href="https://discord.com/oauth2/authorize?client_id=1426532289600552960" onclick="window.open(this.href, 'popup', 'width=600,height=700'); return false;">Пригласить</a>
-                <a class="btn2" href="https://discord.gg/AUxrmymWAE" onclick="window.open(this.href, 'popup', 'width=600,height=700'); return false;">Сервер поддержки</a>
-            </div>
-        </div>
-    </div>
-
-    <section class="feature-item fade-in-section">
-        <div class="container">
-
-            <div class="feature-item">
-                <div class="feature-text">
-                    <h2>Получай информацию о боте</h2>
-                    <p>Команда <code>/about</code> покажет общую информацию о боте и статистику по всем серверам.</p>
-                    <p class="feature-subtext">Ты сможешь видеть количество участников, количество каналов и другую полезную информацию в одном месте.</p>
-                </div>
-                <div class="feature-image">
-                    <img src="assets/images/about-example.png" alt="Пример использования команды /about">
-                </div>
-            </div>
-
-            <div class="feature-item reverse">
-                <div class="feature-text">
-                    <h2>Полная кастомизация логов</h2>
-                    <p>Команда <code>/logify </code> поможет настроить, какие события отслеживать и куда их отправлять. Исключай пользователей, роли или каналы, которые не должны создавать логи.</p>
-                    <p class="feature-subtext">Ты сам решаешь, какие категории логов активировать: сообщения, каналы, голосовые, роли и участники.</p>
-                </div>
-                <div class="feature-image">
-                    <img src="assets/images/logify-example.png" alt="Пример использования команды /logify">
-                </div>
-            </div>
-
-            <div class="feature-item">
-                <div class="feature-text">
-                    <h2>Авто-выдача ролей</h2>
-                    <p>Бот автоматически выдаёт выбранную роль новым участникам сервера с помощью команды <code>/autorole</code>.</p>
-                    <p class="feature-subtext">Просто настрой роль один раз, и каждый новый участник будет получать её автоматически.</p>
-                </div>
-                <div class="feature-image">
-                    <img src="assets/images/autorole-example.png" alt="Пример использования команды /autorole">
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <section class="bot-stats fade-in-section">
-        <div class="container">
-            <h2 class="intro__title">Статистика бота</h2>
-            <div class="bot-stats__inner">
-                <div class="bot-stats__card">
-                    <h3 class="bot-stats__number" id="servers">0+</h3>
-                    <p class="bot-stats__label">Серверов</p>
-                </div>
-                <div class="bot-stats__card">
-                    <h3 class="bot-stats__number" id="users">0+</h3>
-                    <p class="bot-stats__label">Пользователей</p>
-                </div>
-                <div class="bot-stats__card">
-                    <h3 class="bot-stats__number" id="logs">0+</h3>
-                    <p class="bot-stats__label">Отправлено логов</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer fade-in-section">
-        <div class="container footer__inner">
-            <div class="footer__column">
-                <h4 class="footer__title">Информация</h4>
-                <p><a class="footer__text" href="https://docs.logifybot.xyz/">Документация</a></p>
-                <p><a class="footer__text" href="https://discord.gg/AUxrmymWAE" onclick="window.open(this.href, 'popup', 'width=600,height=700'); return false;">Сервер поддержки</a></p>
-                <p><a class="footer__text" href="https://boosty.to/azurebot">Поддержите нас</a></p>
-            </div>
-            <div class="footer__column">
-                <h4 class="footer__title">Документы</h4>
-                <p><a class="footer__text" href="policy/">Политика конфиденциальности</a></p>
-                <p><a class="footer__text" href="terms/">Условия использования</a></p>
-            </div>
-            <div class="footer__column">
-                <h4 class="footer__title">Мониторинги</h4>
-                <p><a class="footer__text" href="https://bots.server-discord.com/1426532289600552960">SDC</a></p>
-                <p><a class="footer__text" href="https://top.gg/bot/1426532289600552960">Top.gg</a></p>
-                <p><a class="footer__text" href="https://boticord.top/bot/1426532289600552960">Boticord</a></p>
-            </div>
-        </div>
-        <div class="footer__bottom">
-            <p class="footer__text">© 2025 Logify. Все права защищены.</p>
-        </div>
-    </footer>
+<div class="buttons">
+    <a href="https://discord.com/oauth2/authorize?client_id=1426532289600552960" class="btn">Добавить бота</a>
+    <a href="https://discord.gg/AUxrmymWAE" class="btn btn-support">Сервер поддержки</a>
 </div>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const faders = document.querySelectorAll('.fade-in-section');
-        const appearOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
-        const appearOnScroll = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
-
-                    if (entry.target.classList.contains('bot-stats')) {
-                        animateNumbers();
-                    }
-
-                } else {
-                    entry.target.classList.remove('is-visible');
-
-                    if (entry.target.classList.contains('bot-stats')) {
-                        resetNumbers();
-                    }
-                }
-            });
-        }, appearOptions);
-
-        faders.forEach(fader => appearOnScroll.observe(fader));
-
-        const burger = document.getElementById('burger');
-        const nav = document.getElementById('nav');
-        const navLinks = document.querySelectorAll('#nav a');
-
-        if (burger && nav) {
-            burger.addEventListener('click', () => {
-                burger.classList.toggle('active');
-                nav.classList.toggle('active');
-                document.body.classList.toggle('menu-open');
-            });
-
-            navLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    burger.classList.remove('active');
-                    nav.classList.remove('active');
-                    document.body.classList.remove('menu-open');
-                });
-            });
-        }
-    });
-
-    window.addEventListener("load", function() {
-        const preloader = document.querySelector(".preloader");
-        if (preloader) preloader.classList.add("hidden");
-    });
-
-    const stats = {
-        servers: 50,
-        users: 120000,
-        logs: 1000
-    };
-
-    function resetNumbers() {
-        document.getElementById('servers').textContent = '0+';
-        document.getElementById('users').textContent = '0+';
-        document.getElementById('logs').textContent = '0+';
-    }
-
-    function animateNumbers() {
-        Object.keys(stats).forEach(id => {
-            const el = document.getElementById(id);
-            let start = Math.floor(Math.random() * stats[id]);
-            const end = stats[id];
-            const duration = 1200;
-            const startTime = performance.now();
-
-            function update(currentTime) {
-                const elapsed = currentTime - startTime;
-                if (elapsed < duration) {
-                    const progress = elapsed / duration;
-                    const value = Math.floor(start + (end - start) * progress);
-                    el.textContent = value + "+";
-                    requestAnimationFrame(update);
-                } else {
-                    el.textContent = end + "+";
-                }
-            }
-
-            requestAnimationFrame(update);
-        });
-    }
-</script>
 
 </body>
-
 </html>
-
-
