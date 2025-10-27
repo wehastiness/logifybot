@@ -20,18 +20,7 @@ body {
     text-align: center;
     padding: 40px 20px;
     position: relative;
-}
-
-body::before {
-    content: "";
-    position: absolute;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(88,101,242,0.15) 0%, transparent 70%);
-    animation: rotate 25s linear infinite;
-    top: -50%;
-    left: -50%;
-    z-index: 0;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 @keyframes rotate {
@@ -53,11 +42,20 @@ body::before {
     border-radius: 50%;
     transition: transform 0.6s ease, filter 0.6s ease;
     cursor: pointer;
+    filter: drop-shadow(0 0 30px #5865F2) drop-shadow(0 0 60px #5865F2);
 }
 
 .logo-container img:hover {
     transform: scale(1.15) rotate(10deg);
-    filter: brightness(1.2);
+    filter: drop-shadow(0 0 50px #5865F2) drop-shadow(0 0 90px #5865F2) brightness(1.2);
+}
+
+@keyframes shake {
+    0% { transform: scale(1.15) rotate(10deg) translateX(0); }
+    25% { transform: scale(1.15) rotate(12deg) translateX(-2px); }
+    50% { transform: scale(1.15) rotate(10deg) translateX(2px); }
+    75% { transform: scale(1.15) rotate(8deg) translateX(-1px); }
+    100% { transform: scale(1.15) rotate(10deg) translateX(0); }
 }
 
 .privacy-title {
@@ -65,7 +63,8 @@ body::before {
     font-weight: 700;
     margin-bottom: 10px;
     color: #5865F2;
-    text-shadow: 0 0 20px #5865F2;
+    text-shadow: 0 0 20px #5865F2, 0 0 40px rgba(88,101,242,0.3);
+    transition: all 0.3s ease;
 }
 
 .last-updated {
@@ -87,12 +86,18 @@ body::before {
     margin-bottom: 15px;
     border-left: 4px solid #5865F2;
     padding-left: 10px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease-out;
 }
 
 .privacy-content p, .privacy-content li {
     font-size: 16px;
     margin-bottom: 12px;
     line-height: 1.6;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease-out;
 }
 
 .privacy-content ul {
@@ -142,9 +147,18 @@ body::before {
     transition: left 0.5s ease;
 }
 
-.btn:hover::before {
-    left: 200%;
+.btn::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: linear-gradient(120deg, rgba(255,255,255,0.1), rgba(255,255,255,0.2), rgba(255,255,255,0.1));
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
+
+.btn:hover::before { left: 200%; }
+.btn:hover::after { opacity: 1; }
 
 .btn:hover {
     transform: scale(1.05);
@@ -161,44 +175,90 @@ body::before {
 }
 
 @media (max-width: 768px) {
-    body {
-        padding: 30px 15px;
-    }
+    body { padding: 30px 15px; }
+    .logo-container { width: 200px; height: 200px; margin-bottom: 30px; }
+    .privacy-title { font-size: 36px; }
+    .privacy-content h2 { font-size: 20px; margin-top: 20px; margin-bottom: 10px; }
+    .privacy-content p, .privacy-content li { font-size: 14px; }
+    .buttons { gap: 20px; }
+    .btn { padding: 14px 30px; font-size: 16px; min-width: 120px; }
+    body::before, body::after { width: 300%; height: 300%; top: -100%; left: -100%; }
+}
 
-    .logo-container {
-        width: 200px;
-        height: 200px;
-        margin-bottom: 30px;
-    }
+.privacy-content h2.visible, .privacy-content p.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
 
-    .privacy-title {
-        font-size: 36px;
-    }
+header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    gap: 10px;
+}
+.flag-button {
+    font-size: 24px;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 10px;
+    background: #5865F2;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.flag-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px #5865F2, 0 0 20px #5865F2;
+}
+#content-ru, #content-en {
+    display: none;
+    position: relative;
+    z-index: 1;
+    color: #fff;
+}
 
-    .privacy-content h2 {
-        font-size: 20px;
-        margin-top: 20px;
-        margin-bottom: 10px;
-    }
+.privacy-content h2,
+.privacy-content p,
+.privacy-content li {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
 
-    .privacy-content p, .privacy-content li {
-        font-size: 14px;
-    }
+.grid-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(20,20,40,1) 20%, rgba(10,10,20,1) 100%);
+    overflow: hidden;
+    z-index: 0;
+    filter: brightness(0.8) contrast(1.2);
+}
 
-    .buttons {
-        gap: 20px;
-    }
+.grid-bg::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    height: 200%;
+    background-image:
+            linear-gradient(#2f2f5a 1px, transparent 1px),
+            linear-gradient(90deg, #2f2f5a 1px, transparent 1px);
+    background-size: 60px 60px;
+    transform: translate(-50%, -50%) perspective(400px) rotateX(65deg);
+    animation: gridMove 5s linear infinite;
+    opacity: 0.3;
+}
 
-    .btn {
-        padding: 14px 30px;
-        font-size: 16px;
-        min-width: 120px;
-    }
-
-    body::before {
-        width: 300%;
-        height: 300%;
-        top: -100%;
-        left: -100%;
-    }
+@keyframes gridMove {
+    0% { transform: translate(-50%, -50%) perspective(400px) rotateX(65deg) translateY(0); }
+    100% { transform: translate(-50%, -50%) perspective(400px) rotateX(65deg) translateY(60px); }
 }

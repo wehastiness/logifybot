@@ -5,18 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>404 - Страница не найдена</title>
     <link rel="icon" type="image/x-icon" href="assets/images/logo.gif">
-    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="stylesheet" href="assets/styles/addon.css">
 </head>
 <body>
+
+<header>
+    <button id="flag-btn" class="flag-button">🌐</button>
+</header>
+
+<div class="grid-bg"></div>
 
 <div class="logo-container">
     <img src="assets/images/logo.gif" alt="Лого с глазом">
 </div>
 
-<div class="buttons">
-    <a href="/" class="btn">На главную</a>
-    <a href="https://discord.gg/AUxrmymWAE" class="btn btn-support">Сервер поддержки</a>
+<div id="content-ru">
+    <h1 class="privacy-title">404 - Страница не найдена</h1>
+    <p class="last-updated">К сожалению, страница, которую вы ищете, не существует.</p>
+
+    <div class="buttons">
+        <a href="/" class="btn">На главную</a>
+        <a href="https://discord.gg/AUxrmymWAE" class="btn btn-support">Сервер поддержки</a>
+    </div>
 </div>
 
+<div id="content-en">
+    <h1 class="privacy-title">404 - Page Not Found</h1>
+    <p class="last-updated">Sorry, the page you are looking for does not exist.</p>
+
+    <div class="buttons">
+        <a href="/" class="btn">Home</a>
+        <a href="https://discord.gg/AUxrmymWAE" class="btn btn-support">Support Server</a>
+    </div>
+</div>
+
+<script src="assets/scripts/language.js"></script>
 </body>
 </html>
