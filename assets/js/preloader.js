@@ -1,9 +1,3 @@
-/**
- * Discord Bot Website By Anomus.LY
- * Repo URL: https://github.com/AnomusLY/CandyWeb
- * © 2025 Anomus.LY
- */
-
 document.addEventListener('DOMContentLoaded', () => {
   const preloader = document.querySelector('.preloader');
 
