@@ -3,31 +3,240 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Logify — Мощный лог-бот для Discord | Отслеживай события на сервере</title>
-    <link rel="icon" href="assets/images/logo.gif" type="image/x-icon">
-    <link rel="stylesheet" href="assets/styles/style.css">
 
-    <meta name="description" content="Logify — многофункциональный лог-бот для Discord. Логируй сообщения, каналы, роли, участников и события сервера. Удобная настройка, статистика активности и безопасность. Добавь Logify и управляй сервером легко!" />
-    <meta name="keywords" content="Logify, Discord лог бот, логирование Discord, бот логирования, Discord log bot, Discord logs, Discord сервер, администрирование Discord, Discord bot, лог событий, Discord админ, отслеживание действий Discord" />
-    <meta name="author" content="Logify Bot">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://logifybot.xyz">
+    <title>Logify Bot - Мощный лог-бот для Discord</title>
+    <meta name="title" content="Logify Bot - Мощный лог-бот для Discord">
+    <meta name="description" content="Logify Bot - Мощный лог-бот для Discord с настройкой и отслеживанием событий.">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://Logifybot.xyz/">
+    <meta property="og:title" content="Logify Bot - Мощный лог-бот для Discord">
+    <meta property="og:description" content="Следите за всеми событиями на сервере с помощью Logify Bot. Настраиваемые логи и управление ролями.">
+    <meta property="og:image:alt" content="Logify Bot Logo">
+    <meta property="og:site_name" content="Logify Bot">
+    <meta property="og:color" content="#5865F2">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://Logifybot.xyz/">
+    <meta property="twitter:title" content="Logify Bot - Мощный лог-бот для Discord">
+    <meta property="twitter:description" content="Следите за всеми событиями на сервере с помощью Logify Bot. Настраиваемые логи и управление ролями.">
+
+    <meta name="theme-color" content="#5865F2">
+
+    <link rel="shortcut icon" href="./assets/images/logo.gif" type="image/x-icon">
+
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/preloader.css">
+    <link rel="stylesheet" href="./assets/css/theme.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-<div class="grid-bg"></div>
-
-<div class="logo-container">
-    <img src="assets/images/logo.gif" alt="Лого с глазом">
-</div>
-
-<div id="content-ru">
-    <div class="buttons">
-        <a href="https://discord.com/oauth2/authorize?client_id=1426532289600552960" class="btn">Добавить бота</a>
-        <a href="https://discord.gg/AUxrmymWAE" class="btn btn-support">Сервер поддержки</a>
-        <a href="https://boosty.to/azurebot" class="btn">Поддержать нас</a>
+<div class="preloader">
+    <div class="loader">
+        <div class="loader-circle"></div>
+        <div class="loader-circle"></div>
+        <img src="./assets/images/logo.gif" alt="Logify Bot Logo" class="loader-logo">
     </div>
 </div>
 
+<header class="header">
+    <div class="container">
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <img src="./assets/images/logo.gif" alt="Logify Bot Logo">
+                <h1>Logify</h1>
+            </a>
+
+            <div class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+
+            <div class="nav-container">
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="#features" class="nav-link">Функции</a></li>
+                        <li><a href="#commands" class="nav-link">Команды</a></li>
+                        <li><a href="#support" class="nav-link">Поддержка</a></li>
+                    </ul>
+                </nav>
+                <div class="header-buttons">
+                    <a href="https://discord.gg/AUxrmymWAE" class="btn btn-secondary" target="_blank">
+                        <i class="fab fa-discord"></i> <span>Сервер поддержки</span>
+                    </a>
+                    <a href="https://discord.com/oauth2/authorize?client_id=1426532289600552960" class="btn btn-primary" target="_blank">
+                        <i class="fas fa-plus"></i> <span>Добавить на сервер</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-badge">Discord Лог-Бот</div>
+            <h1 class="hero-title">Logify — Мощный лог-бот для Discord</h1>
+            <p class="hero-description">Следит за каждым событием на сервере: сообщения, каналы, участники, роли, голосовые события и многое другое. Более 30 видов логов с полной кастомизацией.</p>
+            <div class="hero-features">
+                <div class="hero-feature">
+                    <i class="fas fa-envelope"></i> Сообщения
+                </div>
+                <div class="hero-feature">
+                    <i class="fas fa-bullhorn"></i> Каналы
+                </div>
+                <div class="hero-feature">
+                    <i class="fas fa-microphone"></i> Голосовые
+                </div>
+                <div class="hero-feature">
+                    <i class="fas fa-user"></i> Участники
+                </div>
+                <div class="hero-feature">
+                    <i class="fas fa-user-tag"></i> Роли
+                </div>
+                <div class="hero-feature">
+                    <i class="fas fa-server"></i> Сервер
+                </div>
+            </div>
+            <div class="hero-buttons">
+                <a href="https://discord.com/oauth2/authorize?client_id=1426532289600552960" class="btn btn-primary" target="_blank">
+                    <i class="fas fa-plus"></i> Добавить на сервер
+                </a>
+                <a href="#commands" class="btn btn-secondary">
+                    <i class="fas fa-list"></i> Команды
+                </a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="./assets/images/logo.gif" alt="Logify Bot Logo" class="floating">
+        </div>
+    </div>
+</section>
+
+<section class="features" id="features">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Почему стоит выбрать Logify?</h2>
+            <p class="section-description">Все события на сервере под полным контролем.</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-envelope"></i></div>
+                <h3 class="feature-title">Сообщения</h3>
+                <p class="feature-description">Логирование отправленных, удаленных и отредактированных сообщений.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-bullhorn"></i></div>
+                <h3 class="feature-title">Каналы</h3>
+                <p class="feature-description">Отслеживание создания, удаления и редактирования текстовых и голосовых каналов.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-microphone"></i></div>
+                <h3 class="feature-title">Голосовые</h3>
+                <p class="feature-description">Логи голосовых подключений, отключений и активности участников.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-user"></i></div>
+                <h3 class="feature-title">Участники</h3>
+                <p class="feature-description">Отслеживание вступлений, выходов и изменений статусов участников.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-user-tag"></i></div>
+                <h3 class="feature-title">Роли</h3>
+                <p class="feature-description">Логи добавления, удаления и изменения ролей участников.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-server"></i></div>
+                <h3 class="feature-title">Сервер</h3>
+                <p class="feature-description">Логирование изменений сервера, настроек и правил.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="commands" id="commands">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Команды Logify</h2>
+            <p class="section-description">Управляйте ботом и настройками логов с помощью этих команд.</p>
+        </div>
+        <div class="commands-showcase">
+            <div class="command-list">
+                <div class="command-card">
+                    <h3>/about</h3>
+                    <p>Информация о боте и его возможностях.</p>
+                </div>
+                <div class="command-card">
+                    <h3>/logify</h3>
+                    <p>Просмотр логов и настройка отслеживания событий.</p>
+                </div>
+                <div class="command-card">
+                    <h3>/autorole</h3>
+                    <p>Настройка автоматической выдачи ролей новым участникам.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="support" id="support">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Присоединяйтесь к сообществу</h2>
+            <p class="section-description">Получайте поддержку, делитесь опытом и подключайтесь к другим пользователям Logify.</p>
+        </div>
+        <div class="support-options">
+            <div class="support-card">
+                <div class="support-icon"><i class="fab fa-discord"></i></div>
+                <h3 class="support-title">Сервер поддержки</h3>
+                <p class="support-description">Присоединяйтесь к нашему Discord для мгновенной поддержки и обновлений.</p>
+                <a href="https://discord.gg/AUxrmymWAE" class="btn btn-secondary" target="_blank">
+                    <i class="fas fa-external-link-alt"></i> Присоединиться
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <a href="index.html" class="footer-logo">
+                <img src="./assets/images/logo.gif" alt="Logify Logo">
+                <h2>Logify</h2>
+            </a>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h3><i class="fas fa-gavel"></i> Правила</h3>
+                    <ul>
+                        <li><a href="policy/"><i class="fas fa-chevron-right"></i> Политика конфиденциальности</a></li>
+                        <li><a href="terms/"><i class="fas fa-chevron-right"></i> Условия пользования</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3><i class="fas fa-link"></i> Ссылки</h3>
+                    <ul>
+                        <li><a href="https://discord.gg/AUxrmymWAE" target="_blank"><i class="fab fa-discord"></i> Дискорд</a></li>
+                        <li><a href="https://bots.server-discord.com/1426532289600552960" target="_blank"><i class="fas fa-vote-yea"></i> Голосовать на SDC</a></li>
+                        <li><a href="https://boticord.top/bot/1426532289600552960" target="_blank"><i class="fas fa-vote-yea"></i> Голосовать на Boticord</a></li>
+                        <li><a href="https://top.gg/bot/1426532289600552960" target="_blank"><i class="fas fa-vote-yea"></i> Голосовать на Top.gg</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Logify. Все права защищены.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="./assets/js/preloader.js"></script>
+<script src="./assets/js/script.js"></script>
 </body>
 </html>

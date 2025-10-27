@@ -3,27 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 - Страница не найдена</title>
-    <link rel="icon" type="image/x-icon" href="assets/images/logo.gif">
-    <link rel="stylesheet" href="assets/styles/addon.css">
+    <title>Ошибка 404 - Страница не найдена | Logify Bot</title>
+
+    <meta name="description" content="Страница не найдена. Logify Bot - Discord музыкальный бот.">
+    <meta property="og:title" content="Logify Bot - Ошибка 404">
+    <meta property="og:description" content="Страница не найдена.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://logify.xyz/404/">
+    <meta property="og:image" content="./assets/images/logo.gif">
+
+    <link rel="shortcut icon" href="./assets/images/logo.gif" type="image/x-icon">
+
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/preloader.css">
+    <link rel="stylesheet" href="./assets/css/theme.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        .error-content {
+            padding: var(--spacing-xxl) 0;
+            min-height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .error-content h1 {
+            font-size: 6rem;
+            color: var(--primary);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .error-content h2 {
+            font-size: 2rem;
+            color: var(--text-white);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .error-content p {
+            color: var(--text-gray);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .error-content a.btn {
+            padding: 0.8rem 2rem;
+            font-size: 1rem;
+            border-radius: var(--radius-md);
+        }
+    </style>
 </head>
 <body>
-
-<div class="grid-bg"></div>
-
-<div class="logo-container">
-    <img src="assets/images/logo.gif" alt="Лого с глазом">
+<div class="preloader">
+    <div class="loader">
+        <div class="loader-circle"></div>
+        <div class="loader-circle"></div>
+        <img src="./assets/images/logo.gif" alt="Logify Bot Logo" class="loader-logo">
+    </div>
 </div>
 
-<div id="content-ru" class="privacy-content">
-    <h1 class="privacy-title">404 - Страница не найдена</h1>
-    <p class="last-updated">К сожалению, страница, которую вы ищете, не существует.</p>
+<header class="header">
+    <div class="container">
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <img src="./assets/images/logo.gif" alt="Logify Bot Logo">
+                <h1>Logify</h1>
+            </a>
 
-</div>
-<div class="buttons">
-    <a href="/" class="btn">На главную</a>
-    <a href="https://discord.gg/AUxrmymWAE" class="btn btn-support">Сервер поддержки</a>
-</div>
+            <div class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
 
+            <div class="nav-container">
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html#features" class="nav-link">Функции</a></li>
+                        <li><a href="index.html#commands" class="nav-link">Команды</a></li>
+                        <li><a href="index.html#support" class="nav-link">Поддержка</a></li>
+                    </ul>
+                </nav>
+                <div class="header-buttons">
+                    <a href="https://discord.gg/AUxrmymWAE" class="btn btn-secondary" target="_blank">
+                        <i class="fab fa-discord"></i> <span>Сервер поддержки</span>
+                    </a>
+                    <a href="https://discord.com/oauth2/authorize?client_id=1426532289600552960" class="btn btn-primary" target="_blank">
+                        <i class="fas fa-plus"></i> <span>Добавить на сервер</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section class="error-content">
+    <div class="container">
+        <h1>404</h1>
+        <h2>Страница не найдена</h2>
+        <p>К сожалению, страница, которую вы ищете, не существует или была удалена.</p>
+        <a href="index.html" class="btn btn-primary"><i class="fas fa-home"></i> На главную</a>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <a href="index.html" class="footer-logo">
+                <img src="./assets/images/logo.gif" alt="Logify Logo">
+                <h2>Logify</h2>
+            </a>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h3><i class="fas fa-gavel"></i> Правила</h3>
+                    <ul>
+                        <li><a href="policy/"><i class="fas fa-chevron-right"></i> Политика конфиденциальности</a></li>
+                        <li><a href="terms/"><i class="fas fa-chevron-right"></i> Условия пользования</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3><i class="fas fa-link"></i> Ссылки</h3>
+                    <ul>
+                        <li><a href="https://discord.gg/AUxrmymWAE" target="_blank"><i class="fab fa-discord"></i> Дискорд</a></li>
+                        <li><a href="https://bots.server-discord.com/1426532289600552960" target="_blank"><i class="fas fa-vote-yea"></i> Голосовать на SDC</a></li>
+                        <li><a href="https://boticord.top/bot/1426532289600552960" target="_blank"><i class="fas fa-vote-yea"></i> Голосовать на Boticord</a></li>
+                        <li><a href="https://top.gg/bot/1426532289600552960" target="_blank"><i class="fas fa-vote-yea"></i> Голосовать на Top.gg</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Logify. Все права защищены.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="./assets/js/preloader.js"></script>
+<script src="./assets/js/script.js"></script>
 </body>
 </html>
